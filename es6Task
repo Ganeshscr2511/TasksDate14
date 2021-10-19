@@ -1,0 +1,60 @@
+const scores = [
+  {
+    marks: 32,
+    name: "Yvette Merritt"
+  },
+  {
+    marks: 57,
+    name: "Lillian Ellis"
+  },
+  {
+    marks: 22,
+    name: "Mccall Carter"
+  },
+  {
+    marks: 21,
+    name: "Pate Collier"
+  },
+  {
+    marks: 91,
+    name: "Debra Beard"
+  },
+  {
+    marks: 75,
+    name: "Nettie Hancock"
+  },
+  {
+    marks: 20,
+    name: "Hatfield Hodge"
+  }
+];
+
+// Task 1
+const namesOfEveryone= scores.map( names =>  names.name );
+
+// Task 2
+const studentPassed=scores.filter( student => {
+   if(student.marks >= 40){
+     return student
+   }
+})
+
+// Task 3
+const studentFailed=scores.filter( student => student.marks < 40).map(student => student.name)
+
+//Task 4
+const averageMarks=scores.reduce((previousValue, currentValue) => {
+  return previousValue + currentValue.marks;  
+},0)/scores.length;
+
+// Task 5
+const {name , marks}=scores.reduce((prev, current) => {
+  let top = prev.marks > current.marks ?   prev : current;
+  return top;
+},1);
+
+console.log(namesOfEveryone);
+console.log(studentPassed);
+console.log(studentFailed);
+console.log(averageMarks);
+console.log(name);
