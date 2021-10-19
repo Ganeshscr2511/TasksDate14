@@ -31,6 +31,7 @@ const scores = [
 
 // Task 1
 const namesOfEveryone= scores.map( names =>  names.name );
+console.log(namesOfEveryone);
 
 // Task 2
 const studentPassed=scores.filter( student => {
@@ -38,26 +39,43 @@ const studentPassed=scores.filter( student => {
      return student
    }
 })
+console.log(studentPassed);
 
 // Task 3
 const studentFailed=scores.filter( student => student.marks < 40).map(student => student.name)
+console.log(studentFailed);
 
 //Task 4
 const averageMarks=scores.reduce((previousValue, currentValue) => {
   return previousValue + currentValue.marks;  
 },0)/scores.length;
+console.log(averageMarks);
 
 // Task 5
 const {name , marks}=scores.reduce((prev, current) => {
   let top = prev.marks > current.marks ?   prev : current;
   return top;
 },1);
-
-console.log(namesOfEveryone);
-console.log(studentPassed);
-console.log(studentFailed);
-console.log(averageMarks);
 console.log(name);
+
+// Task 6 Lodash Functions
+
+// intersection
+// let a=[1,2,3,4,5,6];
+// let b=[9,8,7,2,3,5];
+// let difference = a.filter(x => b.includes(x));
+// console.log(difference);
+
+// unique
+// let c=[1,3,5,2,3,1,6,5];
+// var unique = c.filter((v, i, a) => a.indexOf(v) === i);
+// console.log(unique);
+
+// without
+// let a=[1,2,3,4,5];
+// let b=[1,2];
+// var without= a.filter( v => !b.includes(v) );
+// console.log(without);
 
 
 // class Task on 18/10/21
