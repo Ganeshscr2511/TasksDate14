@@ -58,3 +58,47 @@ console.log(studentPassed);
 console.log(studentFailed);
 console.log(averageMarks);
 console.log(name);
+
+
+// class Task on 18/10/21
+
+class Bank{
+  constructor(name, accountType, accountNo, balance){
+    this.name=name;
+    this.accountType=accountType;
+    this.accountNo=accountNo;
+    this.balance=balance;
+  }
+  getBalance(){
+    return "your balance is "+ this.balance;
+  }
+  debit(money){
+    let debit= this.balance + money;
+    this.balance=debit;
+    return "your balance is " + debit;
+  }
+  credit(money){
+    if(money<=this.balance){
+      let credit= this.balance - money;
+      this.balance=credit;
+      return "your balance is " + credit;
+    }
+    else{
+      return "Insufficient Balance , Your Balance is " + this.balance;
+    }
+  }
+}
+
+const sourabh = new Bank("Sourabh", "Savings", 400023, 25000);
+const lokesh = new Bank("Lokesh", "Savings", 400024, 10000);
+const suriya = new Bank("Suriya", "Current", 400025, 100000);
+const asritha = new Bank("Asritha", "Savings", 400026, 20000);
+
+// console.log(sourabh,lokesh,suriya,asritha);
+
+console.log(suriya.credit(200000));
+console.log(suriya.credit(20000));
+console.log(suriya.getBalance());
+console.log(sourabh.getBalance());
+console.log(sourabh.debit(10000));
+console.log(sourabh.getBalance());
